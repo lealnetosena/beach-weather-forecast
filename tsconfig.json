@@ -1,0 +1,42 @@
+{
+  //basicamente boas práticas
+  "compilerOptions": {
+    "target": "es2019", //ecmaScript 2019
+    "moduleResolution": "node", //ambiente node js
+    "module": "commonjs",
+    "lib": ["es2019"], // inclui por default os tipos do ecmaScript
+    "sourceMap": true, // quando ele fazer a compilação vai por uma mapa, serve para debugar mesmo em js veja a tipagem 
+    "outDir": "dist", // local onde será salvo o código compilado
+    //regras
+    "strict": true, // ter sempre strict mode
+    "noImplicitAny": true, // quando não infere um tipo e por padrão ele escolhe any, não vai deixar isso acontecer
+    "strictNullChecks": true, // não deixar uma const como null
+    "strictFunctionTypes": true, 
+    "noImplicitThis": true, // não assumir this
+    "resolveJsonModule": true,
+    "alwaysStrict": true,
+    "removeComments": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".", //base onde vai começar / root
+    "paths": { // mode alias pra aqueles alias, usar import @src ou @test\
+      "@src/*": ["./src/*"],
+      "@test/*": ["./test/*"]
+    },
+    "rootDirs": [
+      "./src",
+      "./test"
+    ],
+    "experimentalDecorators": true, // usar decorators
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./test/**/*.ts"
+  ],
+  "exclude": [
+    "./node_modules/*",
+    "dist"
+  ]
+}
